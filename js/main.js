@@ -22,8 +22,6 @@ const donation_submit_btn = document.getElementById("donation_submit_btn");
 //   "quota_movement_submit_btn"
 // );
 
-let mainBalence = mainBalanceElement.innerText;
-
 donation_submit_btn.addEventListener("click", function () {
   addAmount(
     "flood_donation_balance",
@@ -34,17 +32,41 @@ donation_submit_btn.addEventListener("click", function () {
 
 function addAmount(existingBalance, title, input) {
   const values = valueProvider(existingBalance, title, input);
-  console.log(values.inputValue);
+  const mainBalence = parseFloat(mainBalanceElement.innerText);
 
-  let balance = parseFloat(values.balance);
+  let donatedAmount = parseFloat(values.balance);
+  const inputValue = parseFloat(values.inputValue);
 
-  if (values.inputValue > 0 && !isNaN(values.inputValue)) {
-    console.log(values.inputValue);
-    balance += parseFloat(values.inputValue);
-    console.log(balance);
+  console.log(inputValue);
+
+  const isValidInput = inputValue > 0 && !isNaN(inputValue);
+  const isSuffientBalance = mainBalence >= inputValue;
+
+  if (isValidInput) {
+    if (isSuffientBalance) {
+      const amount = donatedAmount + inputValue;
+      insertToDOM(
+        existingBalance,
+        mainBalence,
+        amount,
+        inputValue,
+        values.title
+      );
+    } else {
+      alert("You have insufficient balance");
+    }
   } else {
-    console.log("wrong input");
+    alert("Wrong input");
   }
+}
+
+function insertToDOM(existingBalance, mainBalence, amount, inputValue, title) {
+  document.getElementById(existingBalance).innerText = amount.toFixed(2);
+  const finalBanalce = mainBalence - inputValue;
+  mainBalanceElement.innerText = finalBanalce.toFixed(2);
+  console.log(mainBalanceElement.innerText);
+
+  pushTransactionHitory(inputValue, title);
 }
 
 function valueProvider(existingBalance, title, input) {
@@ -57,4 +79,22 @@ function valueProvider(existingBalance, title, input) {
     title: flood_donation_title.innerText,
     inputValue: donation_input_amount.value,
   };
+}
+
+function pushTransactionHitory(inputValue, title) {
+  const historyUI = `<div class="p-8 rounded-2xl border border-gray-400">
+            <h3 class="text-lg lg:text-xl font-bold mb-4">
+              <span id="added_amount">${inputValue}</span> Taka is
+              <span id="history_title">${title}</span
+              >
+            </h3>
+            <p class="text-base font-light text-gray-500">
+              Date:
+              <span id="date"
+                >${new Date()}</span
+              >
+            </p>
+          </div>`;
+
+  history_page.innerHTML += historyUI;
 }
