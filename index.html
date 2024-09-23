@@ -42,7 +42,7 @@
     </script>
   </head>
   <body class="font-lexend">
-    <nav class="sticky top-0 z-10 shadow-sm">
+    <nav class="sticky top-0 z-10 shadow-sm px-2 lg:px-4">
       <div class="navbar bg-secondary pb-8 relative z-20">
         <div class="navbar-start">
           <a
@@ -79,7 +79,7 @@
 
         <div class="relative z-10 flex gap-3">
           <button
-            class="bg-primary rounded-lg px-8 md:py-3 py-2 text-black text-lg md:text-xl font-semibold"
+            class="bg-primary rounded-lg px-8 border border-gray-300 md:py-3 py-2 text-black text-lg md:text-xl font-semibold"
             type="button"
             id="donation_btn"
           >
@@ -176,8 +176,9 @@
                   <span
                     id="relief_donation_balance"
                     class="text-base text-gray-600"
-                    >129370 BDT</span
+                    >129370</span
                   >
+                  BDT
                 </div>
 
                 <!-- title -->
@@ -234,8 +235,9 @@
                   <span
                     id="quoto_movement_balance"
                     class="text-base text-gray-600"
-                    >20000 BDT</span
+                    >20000</span
                   >
+                  BDT
                 </div>
 
                 <!-- title -->
@@ -284,6 +286,26 @@
         <!-- history page -->
         <div id="history_page" class="hidden space-y-4 lg:px-4">
           <!-- history -->
+        </div>
+      </div>
+
+      <!-- modal container -->
+      <div
+        id="modal_box"
+        class="opacity-0 pointer-events-none -z-10 absolute inset-0 flex bg-opacity-50 w-full h-screen bg-slate-600 justify-center items-center"
+      >
+        <!-- modal -->
+        <div
+          id="modal"
+          class="bg-white py-6 md:py-8 px-3 md:px-10 rounded-lg text-center space-y-3 max-w-md transition-all scale-0 duration-400"
+        >
+          <h2 class="text-xl md:text-2xl font-bold text-black">Congrates!</h2>
+          <img class="mx-auto" src="./assets/coin.png" alt="" />
+          <p class="text-gray-500">You Have Donated for Humankind</p>
+          <h4 class="font-semibold">Successfully</h4>
+          <button id="close_modal_btn" type="button" class="btn">
+            Close Confirmation
+          </button>
         </div>
       </div>
     </main>
