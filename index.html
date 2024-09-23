@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate Bangladesh</title>
+
+    <!-- tailwind css -->
+    <script src="./js/tailwind.js"></script>
+
+    <!-- daisy ui cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- google font cdn -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- tailwind config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              lexend: ["Lexend", "sans-serif"],
+            },
+            colors: {
+              primary: "#B4F461",
+              secondary: "#F9F7F3",
+              black: "#111111",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-lexend">
+    <nav class="sticky top-0 z-10 shadow-sm">
+      <div class="navbar bg-secondary pb-8 relative z-20">
+        <div class="navbar-start">
+          <a
+            class="bg-primary rounded px-8 py-2 md:py-3 text-black text-lg md:text-xl font-semibold block"
+            href="./blog.html"
+            >Blog</a
+          >
+        </div>
+        <div class="navbar-center hidden md:block">
+          <a class="text-xl flex gap-2 justify-center items-center">
+            <img src="./assets/logo.png" alt="" />
+            <span class="text-black text-xl font-semibold"
+              >Donate Bangladesh</span
+            >
+          </a>
+        </div>
+        <div class="navbar-end">
+          <p class="flex justify-center items-center gap-2">
+            <img src="./assets/coin.png" alt="" />
+            <span
+              id="main_balance"
+              class="text-lg md:text-xl font-medium text-slate-500"
+              >10000</span
+            >
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="relative flex justify-center items-center py-8 -mt-2 bg-gray-50"
+      >
+        <div class="absolute inset-0 blur-md z-0"></div>
+
+        <div class="relative z-10 flex gap-3">
+          <button
+            class="bg-primary rounded-lg px-8 md:py-3 py-2 text-black text-lg md:text-xl font-semibold"
+            type="button"
+            id="donation_btn"
+          >
+            Donation
+          </button>
+          <button
+            class="border border-gray-300 rounded-lg px-8 md:py-3 py-2 text-black text-lg md:text-xl font-semibold"
+            type="button"
+            id="history_btn"
+          >
+            History
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- main content area -->
+    <main class="mt-10 py-5">
+      <div class="container mx-auto px-3 md:px-0">
+        <!-- donation page -->
+        <div id="donation_page" class="">
+          <!-- card container -->
+          <div class="space-y-4">
+            <!-- card 1 -->
+            <div
+              class="flex flex-col lg:flex-row gap-8 p-8 rounded-2xl border border-gray-300"
+            >
+              <img src="./assets/noakhali.png" alt="" />
+
+              <!-- content -->
+              <div class="relative">
+                <!-- donated amount -->
+                <div class="px-4 py-2 rounded-lg bg-gray-100 inline">
+                  <img class="inline" src="./assets/coin.png" alt="" />
+                  <span
+                    id="flood_donation_balance"
+                    class="text-base text-gray-600"
+                    >50000</span
+                  >
+                  <span> BDT</span>
+                </div>
+
+                <!-- title -->
+
+                <h2
+                  id="flood_donation_title"
+                  class="text-lg md:text-xl font-bold mt-4"
+                >
+                  Donate for Flood at Noakhali, Bangladesh
+                </h2>
+
+                <!-- description -->
+                <p class="mt-4 text-base text-gray-400">
+                  The recent floods in Noakhali have caused significant damage
+                  to homes infrastructure. Your donation will help provide
+                  essential supplies and to those affected by this disaster.
+                  Every contribution, big or small, makes difference. Please
+                  join us in supporting the relief efforts and making a positive
+                  impact on the lives of those in need.
+                </p>
+
+                <!-- action -->
+                <div class="mt-4 space-y-4">
+                  <!-- donation input -->
+                  <input
+                    id="donation_input_amount"
+                    type="text"
+                    placeholder="Write Donation Amount"
+                    class="input input-bordered w-full"
+                  />
+
+                  <!-- donation button -->
+                  <button
+                    id="donation_submit_btn"
+                    type="button"
+                    class="py-3 rounded-lg w-full bg-primary text-black text-lg md:text-xl font-semibold"
+                  >
+                    Donate Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- card 2 -->
+            <div
+              class="flex flex-col lg:flex-row gap-8 p-8 rounded-2xl border border-gray-300"
+            >
+              <img src="./assets/feni.png" alt="" />
+
+              <!-- content -->
+              <div class="relative">
+                <!-- donated amount -->
+                <div class="px-4 py-2 rounded-lg bg-gray-100 inline">
+                  <img class="inline" src="./assets/coin.png" alt="" />
+                  <span
+                    id="relief_donation_balance"
+                    class="text-base text-gray-600"
+                    >129370 BDT</span
+                  >
+                </div>
+
+                <!-- title -->
+
+                <h2
+                  id="relief_donation_title"
+                  class="text-lg md:text-xl font-bold mt-4"
+                >
+                  Donate for Flood Relief in Feni,Bangladesh
+                </h2>
+
+                <!-- description -->
+                <p class="mt-4 text-base text-gray-400">
+                  The recent floods in Noakhali have caused significant damage
+                  to homes infrastructure. Your donation will help provide
+                  essential supplies and to those affected by this disaster.
+                  Every contribution, big or small, makes difference. Please
+                  join us in supporting the relief efforts and making a positive
+                  impact on the lives of those in need.
+                </p>
+
+                <!-- action -->
+                <div class="mt-4 space-y-4">
+                  <!-- donation input -->
+                  <input
+                    id="relief_input_amount"
+                    type="text"
+                    placeholder="Write Donation Amount"
+                    class="input input-bordered w-full"
+                  />
+
+                  <!-- donation button -->
+                  <button
+                    id="relief_submit_btn"
+                    type="button"
+                    class="py-3 rounded-lg w-full bg-primary text-black text-lg md:text-xl font-semibold"
+                  >
+                    Donate Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- card 3 -->
+            <div
+              class="flex flex-col lg:flex-row gap-8 p-8 rounded-2xl border border-gray-300"
+            >
+              <img src="./assets/quota-protest.png" alt="" />
+
+              <!-- content -->
+              <div class="relative">
+                <!-- donated amount -->
+                <div class="px-4 py-2 rounded-lg bg-gray-100 inline">
+                  <img class="inline" src="./assets/coin.png" alt="" />
+                  <span
+                    id="quoto_movement_balance"
+                    class="text-base text-gray-600"
+                    >20000 BDT</span
+                  >
+                </div>
+
+                <!-- title -->
+
+                <h2
+                  id="quota_movement_title"
+                  class="text-lg md:text-xl font-bold mt-4"
+                >
+                  Aid for Injured in the Quota Movement
+                </h2>
+
+                <!-- description -->
+                <p class="mt-4 text-base text-gray-400">
+                  The recent floods in Noakhali have caused significant damage
+                  to homes infrastructure. Your donation will help provide
+                  essential supplies and to those affected by this disaster.
+                  Every contribution, big or small, makes difference. Please
+                  join us in supporting the relief efforts and making a positive
+                  impact on the lives of those in need.
+                </p>
+
+                <!-- action -->
+                <div class="mt-4 space-y-4">
+                  <!-- donation input -->
+                  <input
+                    id="quota_input_amount"
+                    type="text"
+                    placeholder="Write Donation Amount"
+                    class="input input-bordered w-full"
+                  />
+
+                  <!-- donation button -->
+                  <button
+                    id="quota_movement_submit_btn"
+                    type="button"
+                    class="py-3 rounded-lg w-full bg-primary text-black text-lg md:text-xl font-semibold"
+                  >
+                    Donate Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- history page -->
+        <div id="history_page" class="hidden space-y-4 lg:px-4">
+          <!-- history -->
+          <div class="p-8 rounded-2xl border border-gray-400">
+            <h3 class="text-lg lg:text-xl font-bold mb-4">
+              <span id="added_amount">2000</span> Taka is
+              <span id="history_title">
+                Donated for famine-2024 at Feni, Bangladesh</span
+              >
+            </h3>
+            <p class="text-base font-light text-gray-500">
+              Date:
+              <span id="date"
+                >Mon Sep 23 2024 10:08:33 GMT +0600 (Bangladesh Standard
+                Time)</span
+              >
+            </p>
+          </div>
+          <div class="p-8 rounded-2xl border border-gray-400">
+            <h3 class="text-lg lg:text-xl font-bold mb-4">
+              <span id="added_amount">2000</span> Taka is
+              <span id="history_title">
+                Donated for famine-2024 at Feni, Bangladesh</span
+              >
+            </h3>
+            <p class="text-base font-light text-gray-500">
+              Date:
+              <span id="date"
+                >Mon Sep 23 2024 10:08:33 GMT +0600 (Bangladesh Standard
+                Time)</span
+              >
+            </p>
+          </div>
+          <div class="p-8 rounded-2xl border border-gray-400">
+            <h3 class="text-lg lg:text-xl font-bold mb-4">
+              <span id="added_amount">2000</span> Taka is
+              <span id="history_title">
+                Donated for famine-2024 at Feni, Bangladesh</span
+              >
+            </h3>
+            <p class="text-base font-light text-gray-500">
+              Date:
+              <span id="date"
+                >Mon Sep 23 2024 10:08:33 GMT +0600 (Bangladesh Standard
+                Time)</span
+              >
+            </p>
+          </div>
+          <div class="p-8 rounded-2xl border border-gray-400">
+            <h3 class="text-lg lg:text-xl font-bold mb-4">
+              <span id="added_amount">2000</span> Taka is
+              <span id="history_title">
+                Donated for famine-2024 at Feni, Bangladesh</span
+              >
+            </h3>
+            <p class="text-base font-light text-gray-500">
+              Date:
+              <span id="date"
+                >Mon Sep 23 2024 10:08:33 GMT +0600 (Bangladesh Standard
+                Time)</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
