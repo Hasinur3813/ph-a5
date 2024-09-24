@@ -29,11 +29,18 @@ const trackDonationBtn = {
   ],
 };
 
+// loop through the donation button to add an event
+
 for (let i = 0; i < donationBtn.length; i++) {
+  // get each elements id
   const id = donationBtn[i].id;
 
+  // match the id with trackDonationBtn object
   const matchedId = trackDonationBtn[id];
+
+  // add an click event in each donation button
   document.getElementById(id).addEventListener("click", function () {
+    // call the addAmount function and pass the matchedId array as parameter
     addAmount(matchedId);
   });
 }
