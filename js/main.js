@@ -29,21 +29,18 @@ const trackDonationBtn = {
   ],
 };
 
-// loop through the donation button to add an event
+// add an event dynamically to the donation button with the concept of Event Delegation
+// add an event to the donation page to track which donation button was clicked
+donation_page.addEventListener("click", function (e) {
+  // if one of the donation button is clicked then handle the event
+  if (e.target.classList.contains("donation_btn")) {
+    const id = e.target.id;
+    const matchedId = trackDonationBtn[id];
 
-for (let i = 0; i < donationBtn.length; i++) {
-  // get each elements id
-  const id = donationBtn[i].id;
-
-  // match the id with trackDonationBtn object
-  const matchedId = trackDonationBtn[id];
-
-  // add an click event in each donation button
-  document.getElementById(id).addEventListener("click", function () {
-    // call the addAmount function and pass the matchedId array as parameter
+    // call the function and pass the parameter as an array of matchedId
     addAmount(matchedId);
-  });
-}
+  }
+});
 
 donation_btn.addEventListener("click", function () {
   donation_btn.classList.add("bg-primary");
@@ -152,7 +149,7 @@ function pushTransactionHitory(inputValue, title) {
             </p>
           </div>`;
 
-  history_page.innerHTML += historyUI;
+  history_page.insertAdjacentHTML("beforeend", historyUI);
 }
 
 // open a modal for a successfull transaction
