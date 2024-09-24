@@ -43,7 +43,7 @@
   </head>
   <body class="font-lexend">
     <nav class="sticky top-0 left-0 z-10 shadow-sm">
-      <div class="navbar bg-secondary relative z-20 lg:px-4">
+      <div class="navbar relative z-10 bg-secondary py-4 bg-opacity-50 lg:px-4">
         <div class="navbar-start">
           <a
             class="bg-primary rounded px-8 py-2 md:py-3 text-black text-lg md:text-xl font-semibold block"
@@ -73,11 +73,9 @@
       </div>
 
       <div
-        class="relative flex justify-center items-center pt-8 pb-3 -mt-2 bg-gray-50"
+        class="flex justify-center relative z-10 items-center pt-8 pb-4 -mt-2"
       >
-        <div class="absolute inset-0 blur-md z-0"></div>
-
-        <div class="relative z-10 flex gap-3">
+        <div class="flex gap-3">
           <button
             class="bg-primary rounded-lg px-8 border border-gray-300 md:py-3 py-2 text-black text-lg md:text-xl font-semibold"
             type="button"
@@ -94,6 +92,11 @@
           </button>
         </div>
       </div>
+
+      <!-- blur effect on the nav area -->
+      <div
+        class="absolute inset-0 bg-white bg-opacity-80 backdrop-blur-md"
+      ></div>
     </nav>
 
     <!-- main content area -->
