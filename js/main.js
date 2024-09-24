@@ -66,6 +66,8 @@ function addAmount(existingBalance, title, input) {
     inputValue = parseFloat(values.inputValue);
   }
 
+  console.log(inputValue);
+
   if (inputValue > 0) {
     const isSuffientBalance = mainBalence >= inputValue;
     if (isSuffientBalance) {
@@ -78,14 +80,12 @@ function addAmount(existingBalance, title, input) {
         values.title
       );
       values.inputElement.value = "";
-      modal_box.classList.add("opacity-100", "pointer-events-auto", "z-40");
-      modal.classList.add("scale-100");
-      document.body.style.overflow = "hidden";
+      openModal();
     } else {
       alert("You have insufficient balance");
     }
   } else {
-    alert("Wrong input");
+    alert("Your input can't be added!");
   }
 }
 
@@ -127,3 +127,16 @@ function pushTransactionHitory(inputValue, title) {
 
   history_page.innerHTML += historyUI;
 }
+
+function openModal() {
+  modal_box.classList.add("opacity-100", "pointer-events-auto", "z-40");
+  modal.classList.add("scale-100");
+  document.body.style.overflow = "hidden";
+}
+
+close_modal_btn.onclick = function () {
+  modal_box.classList.remove("opacity-100", "pointer-events-auto", "z-40");
+
+  modal.classList.remove("scale-100");
+  document.body.style.overflow = "auto";
+};

@@ -42,8 +42,8 @@
     </script>
   </head>
   <body class="font-lexend">
-    <nav class="sticky top-0 z-10 shadow-sm px-2 lg:px-4">
-      <div class="navbar bg-secondary pb-8 relative z-20">
+    <nav class="sticky top-0 left-0 z-10 shadow-sm">
+      <div class="navbar bg-secondary relative z-20 lg:px-4">
         <div class="navbar-start">
           <a
             class="bg-primary rounded px-8 py-2 md:py-3 text-black text-lg md:text-xl font-semibold block"
@@ -53,7 +53,7 @@
         </div>
         <div class="navbar-center hidden md:block">
           <a class="text-xl flex gap-2 justify-center items-center">
-            <img src="./assets/logo.png" alt="" />
+            <img class="w-8" src="./assets/logo.png" alt="" />
             <span class="text-black text-xl font-semibold"
               >Donate Bangladesh</span
             >
@@ -73,7 +73,7 @@
       </div>
 
       <div
-        class="relative flex justify-center items-center py-8 -mt-2 bg-gray-50"
+        class="relative flex justify-center items-center pt-8 pb-3 -mt-2 bg-gray-50"
       >
         <div class="absolute inset-0 blur-md z-0"></div>
 
@@ -292,7 +292,7 @@
       <!-- modal container -->
       <div
         id="modal_box"
-        class="opacity-0 pointer-events-none -z-10 absolute inset-0 flex bg-opacity-50 w-full h-screen bg-slate-600 justify-center items-center"
+        class="opacity-0 pointer-events-none -z-10 fixed inset-0 flex bg-opacity-50 w-full h-screen bg-slate-600 justify-center items-center"
       >
         <!-- modal -->
         <div
