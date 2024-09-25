@@ -41,14 +41,37 @@
     </script>
   </head>
   <body class="font-lexend">
-    <div class="container mx-auto px-2">
-      <div class="py-5">
+    <div class="navbar relative z-10 bg-secondary py-4 bg-opacity-50 lg:px-4">
+      <div class="navbar-start">
         <a
-          class="inline-block px-4 py-3 rounded-lg bg-primary hover:bg font-bold"
+          class="bg-primary rounded px-8 py-2 md:py-3 text-black text-lg md:text-xl font-semibold block"
           href="./index.html"
-          >Go Home</a
+          >Home</a
         >
       </div>
+      <div class="navbar-center hidden md:block">
+        <a class="text-xl flex gap-2 justify-center items-center">
+          <img class="w-8" src="./assets/logo.png" alt="" />
+          <span class="text-black text-xl font-semibold"
+            >Donate Bangladesh</span
+          >
+        </a>
+      </div>
+      <div class="navbar-end">
+        <p class="flex justify-center items-center gap-2">
+          <img src="./assets/coin.png" alt="" />
+          <span
+            id="main_balance"
+            class="text-lg md:text-xl font-medium text-slate-500"
+            >10000</span
+          >
+          BDT
+        </p>
+      </div>
+    </div>
+
+    <div class="container mx-auto px-2">
+      <h1 class="text-3xl mt-10 font-bold">Important FAQ</h1>
       <div class="mt-10 pb-10 space-y-4">
         <div class="collapse collapse-arrow bg-base-200">
           <input type="radio" name="my-accordion-2" checked="checked" />
